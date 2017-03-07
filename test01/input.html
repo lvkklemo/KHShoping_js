@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        input,button{
+            border: 0 none;
+            padding: 0;
+        }
+        .search{
+            width:258px;
+            height:40px;
+            margin: 100px auto;
+            background-color: #8A25C6;
+        }
+        .search input{
+            width:208px;
+            height: 40px;
+            background-image: url(images/left.jpg);
+            float: left;
+            padding-left: 8px;
+            color: #ccc;
+        }
+        .search button{
+            width:42px;
+            height: 40px;
+            background-image: url(images/right.jpg);
+            float: left;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+
+            var txt = document.getElementById("txt");
+            txt.onfocus = function(){ //得到焦点
+
+                if(txt.value == "请输入..."  )
+                {
+                    txt.value = "";
+                    txt.style.color = "#333";
+                }
+            }
+            txt.onblur = function(){ //失去焦点
+                if(txt.value == "")
+                {
+                    txt.value = "请输入...";
+                    txt.style.color = "#ccc";
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+<div class="search">
+    <input id="txt" type="text" value="请输入..."/>
+    <button></button>
+</div>
+
+</body>
+</html>
